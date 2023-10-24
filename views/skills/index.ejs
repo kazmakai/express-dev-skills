@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Express Dev Skills</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>All Dev Skills</h1>
+    <ul>
+      <% skills.forEach(function(s) { %>
+        <li>
+          <a href="/skills/<%= s.id %>"><%= s.skill %></a>
+            - 
+          <%= s.proficiency ? 'competent' : 'poor' %>
+        </li>
+      <% }); %>
+    </ul>
+</body>
+</html>
