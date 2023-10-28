@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Express Dev Skills</title>
-</head>
-<body>
-    <a href="/">Home</a>
-    <h1>All Dev Skills</h1>
+<%- include('../partials/header') %>
     <ul>
       <% skills.forEach(function(s) { %>
         <li>
+          <!-- <form action="/skills/<%= s.id %>?_method=EDIT"
+            class="edit-form" method="PUT">
+            <input type="text">
+            <button></button>
+
+          </form> -->
           <a href="/skills/<%= s.id %>"><%= s.skill %></a>
             - 
           <%= s.proficiency ? 'competent' : 'poor' %>
         </li>
       <% }); %>
+      <a href="/skills/new">Add Skills</a>
+      
     </ul>
-</body>
-</html>
+<%- include('../partials/footer') %>
